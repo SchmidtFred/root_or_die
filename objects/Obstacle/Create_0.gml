@@ -5,26 +5,26 @@ sound = undefined;
 choice = irandom(100);
 
 
-if (choice < 10) {
-	me = "gem";
-} else if (choice < 15) {
-	me = "skeleton";
-} else if (choice < 30) {
-	me = "bone";
-} else if (choice < 35) {
-	me = "cow";	
-} else if (choice < 55) { 
-	me = "rock";
-} else if (choice < 70) {
-	me = "nothing";
-} else if (choice < 75) {
-	me = "route66";
-} else if (choice < 80) {
-	me = "chicken"	
-} else if (choice < 85) {
-	me = "icecream";
+if (choice < 12) {
+    me = "gem";
+} else if (choice < 19) {
+    me = "skeleton";
+} else if (choice < 29) {
+    me = "bone";
+} else if (choice < 34) {
+    me = "cow";    
+} else if (choice < 64) { 
+    me = "rock";
+} else if (choice < 84) {
+    me = "nothing";
+} else if (choice < 87) {
+    me = "route66";
+} else if (choice < 92) {
+    me = "chicken"    
+} else if (choice < 97) {
+    me = "icecream";
 } else if (choice > 96) {
-	me = "hl3";
+    me = "hl3";
 }
 
 switch (me) {

@@ -2,11 +2,14 @@
 #macro Sound MainController.sound_data
 #macro Audio MainController.audio_controller
 
+draw_set_font(ft_Root);
+
 particle = new ParticleClass();
 sound_data = new AudioData();
 audio_controller = new AudioClass();
 
-audio_play_sound(msc_main, 1, 1);
+game_music = audio_play_sound(msc_main, 1, 1, 0);
+menu_music = audio_play_sound(msc_menu, 1, 1, 1);
 
 window_set_size(1280, 720);
 window_set_position(

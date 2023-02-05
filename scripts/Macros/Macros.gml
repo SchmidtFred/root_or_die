@@ -15,3 +15,5 @@
 #macro GUI_H display_get_gui_height()
 
 function null_function(){};
+function game_start() { room_goto(RoomGame); }
+function show_credits(){ instance_create_layer(0, 0, layer, Credits);};
