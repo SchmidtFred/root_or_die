@@ -9,10 +9,12 @@ ipt = {};
 camera = view_camera[0];
 zoom_out = false;
 length_tracker = 0;
+score = length_tracker;
 root_spawn_timer_base = 15;
 root_spawn_timer = root_spawn_timer_base * room_speed;
 game_over = false;
 paused = false;
+sound = Sound.root_spawn;
 function toggle_pause(){
 	paused = !paused;	
 }
@@ -75,6 +77,7 @@ function create_root() {
 		if (!found_corner) {
 			create_root_at_base();
 		}
+		Audio.play_dialogue(sound);
 	}
 }
 
@@ -101,6 +104,7 @@ function kill_current_root(_root_index) {
 	if ( array_length(alive_roots) <= 0 ) {
 		zoom_out = true;
 		game_over = true;
+		score = round((length_tracker/120) * 100)/100;
 		camera_set_view_size(camera, BIG_CAM_W, BIG_CAM_H);
 	}
 

@@ -44,7 +44,16 @@ tutorial = Coroutine(){
 	text = "You can switch between roots using [A] and [D] keys!";
 	Await(tutorial_input); Then
 	
+	text = "You can see the whole root system using the [Tab] key!";
+	Await(tutorial_input); Then
+	
 	text = "Avoid the obstacles and grow your tree!";
+	Await(tutorial_input); Then
+	
+	text = "More roots will spawn the longer your roots grow!";
+	Await(tutorial_input); Then
+	
+	text = "For more of a challenge, press [Alt] to create new roots!";
 	Await(tutorial_input); Then
 	
 	text = "Have fun!!";

@@ -1,8 +1,10 @@
 function AudioData() constructor {
 
 	intro		= [ sndGameIntro];
+	root_spawn  = [ sndIntro_1, sndIntro_2, sndIntro_3, sndIntro_4, sndIntro_5 ];
 	gems		= [ sndGem_1, sndGem_2, sndGem_3 ];
-	bones		= [	sndBone1, sndBone2, sndBone3, sndBone4, sndBone5_skele1, sndBone5_skele2 ];
+	bones		= [	sndBone1, sndBone2, sndBone3, sndBone4 ];
+	skeleton	= [ sndBone5_skele1, sndBone5_skele2 ]
 	rocks		= [	sndRock1, sndRock2, sndRock3, sndRock4, sndRock5 ];
 	cow			= [	sndCow ];
 	chicken		= [	sndChicken ];
