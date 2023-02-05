@@ -32,9 +32,29 @@ function root_spawn_check() {
 			var dir = free_array[i];
 			var xx = lengthdir_x(16, dir);
 			var yy = lengthdir_y(16, dir);
-			if (!collision_line(x, y, x + xx, y + yy, collision_parent, true, true)) {
-				array_push(actual_free_array, dir);
+			//var col= collision_line(x, y, x + xx, y + yy, collision_parent, true, true);
+			//if ( col && col != root1 && col != root2) {
+			//	array_push(actual_free_array, dir);
+			//}
+			//if ( !col ) {
+			//	
+			//}
+			var list= ds_list_create();
+			var col = collision_line_list(x, y, x + xx, y + yy, collision_parent, true, true, list, true);
+			if ( col > 0 ){
+				var i = 0;
+				var avaliable = true;
+				repeat(ds_list_size(list)){
+					if ( list[| i] != root1 &&
+						 list[| i] != root2 ){
+							 avaliable = false;
+							 break;
+						 }
+					i++;
+				}
+				if ( avaliable ) array_push(actual_free_array, dir);
 			}
+			ds_list_destroy(list);
 		}
 		return_data.available_angles = actual_free_array;
 		if (array_length(actual_free_array) > 0) {
