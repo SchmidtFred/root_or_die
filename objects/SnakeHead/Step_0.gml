@@ -6,8 +6,9 @@ if (!dead) {
 	//collision check
 	var xx = lengthdir_x(sprite_width, direction);
 	var yy = lengthdir_y(sprite_width, direction);
-	if (collision_circle(x + xx, y + yy, 1, collision_parent, true, true)) {
-		player_controller.kill_current_root();
+	var col= collision_circle(x + xx, y + yy, 1, collision_parent, true, true)
+	if ( col && col != current_body ) {
+		player_controller.kill_current_root(id);
 		x += lengthdir_x(1, direction);
 		y += lengthdir_y(1, direction);
 	}

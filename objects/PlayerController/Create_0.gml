@@ -81,18 +81,25 @@ function create_root() {
 
 //function to move current root to dead roots and then deactivate it
 //index will not change because we just pop the current one out
-function kill_current_root() {
-	array_push(dead_roots, current_root);
-	current_root.toggle_active();
-	current_root.kill_root();
-	array_delete(alive_roots, current_root_index, 1);
-	if (array_length(alive_roots) > 0) {
+function kill_current_root(_root_index) {
+	//show_message(_root_index);
+	//show_message(alive_roots);
+	var index = array_get_index(alive_roots, _root_index);
+	var remove_root = alive_roots[index];
+	array_push(dead_roots, remove_root);
+	//remove_root.toggle_active();
+	remove_root.kill_root();
+	array_delete(alive_roots, index, 1);
+	
+	if ( remove_root == current_root && array_length(alive_roots) > 0 ) {
+		current_root.toggle_active();
 		if (current_root_index >= array_length(alive_roots)) {
 			current_root_index = 0;
 		}
 		current_root = alive_roots[current_root_index];
 		current_root.toggle_active();
-	} else {
+	}
+	if ( array_length(alive_roots) <= 0 ) {
 		zoom_out = true;
 		game_over = true;
 		camera_set_view_size(camera, BIG_CAM_W, BIG_CAM_H);

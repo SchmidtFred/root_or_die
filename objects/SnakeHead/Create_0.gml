@@ -18,15 +18,22 @@ current_body = instance_create_layer(x, y, layer, RootBody);
 current_body.image_angle = image_angle;
 current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y);
 current_body.image_yscale = ROOT_WIDTH;
+array_push(my_bodies, current_body);
 
+function change_col(_newCol){
+	image_blend = _newCol;
+	var i = 0; repeat(array_length(my_bodies)) my_bodies[i++].image_blend = _newCol;
+	var i = 0; repeat(array_length(my_corners)) my_corners[i++].image_blend = _newCol;
+}
 function change_dir(_newDir) {
 	_newDir = round((_newDir/DIRECTION_ADD)) * DIRECTION_ADD;
 	if (movement_timer > movement_timer_trigger && _newDir != (direction + 180) % 360) {
-		set_dir(_newDir);
-		image_angle = direction;
+		//set_dir(_newDir);
+		direction = _newDir;
 	
 		//create corner
 		var newCorner = instance_create_layer(x,y,layer,RootCorner);
+		newCorner.image_blend = image_blend;
 		array_push(my_corners, newCorner);
 		newCorner.root1 = current_body;
 		newCorner.root1_dir = (old_dir + 180) % 360;
@@ -35,17 +42,20 @@ function change_dir(_newDir) {
 		//create new root body
 		current_body = instance_create_layer(x, y, layer, RootBody);
 		array_push(my_bodies, current_body);
+		current_body.image_blend = image_blend;
 		current_body.image_angle = image_angle;
 		current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y);
 		current_body.image_yscale = ROOT_WIDTH;
 		newCorner.root2 = current_body;
 		//reset movement timer
 		movement_timer = 0;
+		old_dir = direction;
 	}
 }
 
 function toggle_active() {
 	active_head = !active_head;
+	change_col(active_head ? c_lime : c_white);
 }
 
 function kill_root() {
