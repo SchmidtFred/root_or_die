@@ -37,7 +37,11 @@ if (ipt.zoom) {
 }
 
 if (!zoom_out) {
-	camera_set_view_pos(camera,current_root.x - camera_get_view_width(camera)/2,current_root.y - camera_get_view_height(camera)/2);
+	var ww = camera_get_view_width(camera)/2;
+	var hh = camera_get_view_height(camera)/2;
+	camera_set_view_pos(camera,
+		clamp(current_root.x - ww, 0, room_width-hh),
+		clamp(current_root.y - hh, 0, room_height-hh));
 } else {
 	camera_set_view_pos(camera, 0, 0);
 }

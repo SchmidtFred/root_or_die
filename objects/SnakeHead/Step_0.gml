@@ -1,12 +1,7 @@
-if (active_head) {
-	image_blend = c_green;
-} else {
-	image_blend = c_white;
-}
-
 //root body
 if (!dead) {
-	image_angle = direction;	
+	//image_angle = direction;	
+	image_angle += angle_difference(direction, image_angle) * .3;
 	
 	//collision check
 	var xx = lengthdir_x(sprite_width, direction);
@@ -25,3 +20,5 @@ if (!dead) {
 
 
 movement_timer++;
+var _ahead = 12;
+RenderGround.do_cutout(x + (dcos(image_angle)*_ahead), y - (dsin(image_angle)*_ahead));
