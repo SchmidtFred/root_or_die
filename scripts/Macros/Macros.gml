@@ -13,3 +13,5 @@
 #macro WINDOW_H window_get_height()
 #macro GUI_W display_get_gui_width()
 #macro GUI_H display_get_gui_height()
+
+function null_function(){};

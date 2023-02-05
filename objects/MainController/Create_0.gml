@@ -1,5 +1,12 @@
 #macro Particle MainController.particle
+#macro Sound MainController.sound_data
+#macro Audio MainController.audio_controller
+
 particle = new ParticleClass();
+sound_data = new AudioData();
+audio_controller = new AudioClass();
+
+audio_play_sound(msc_main, 1, 1);
 
 window_set_size(1280, 720);
 window_set_position(

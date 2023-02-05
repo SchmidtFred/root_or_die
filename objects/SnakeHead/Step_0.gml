@@ -13,6 +13,8 @@ if (!dead) {
 		player_controller.kill_current_root(id);
 		x += lengthdir_x(1, direction);
 		y += lengthdir_y(1, direction);
+		
+		col.collision_callback();
 	}
 	current_body.image_angle = point_direction(current_body.x, current_body.y, x, y);
 	current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y);
