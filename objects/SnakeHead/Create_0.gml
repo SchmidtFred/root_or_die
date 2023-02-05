@@ -7,7 +7,7 @@ player_controller = 0;
 active_head = false;
 current_body = 0;
 dead = false;
-old_dir = direction;
+old_dir = 90;
 movement_timer_trigger = 30;
 movement_timer = movement_timer_trigger + 1;
 my_corners = [];
@@ -20,9 +20,9 @@ current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y)
 current_body.image_yscale = ROOT_WIDTH;
 
 function change_dir(_newDir) {
-	if (movement_timer > movement_timer_trigger && _newDir != old_dir) {
-		_newDir = round((_newDir/DIRECTION_ADD)) * DIRECTION_ADD;
-		direction = _newDir;
+	_newDir = round((_newDir/DIRECTION_ADD)) * DIRECTION_ADD;
+	if (movement_timer > movement_timer_trigger && _newDir != (direction + 180) % 360) {
+		set_dir(_newDir);
 		image_angle = direction;
 	
 		//create corner
@@ -41,7 +41,6 @@ function change_dir(_newDir) {
 		newCorner.root2 = current_body;
 		//reset movement timer
 		movement_timer = 0;
-		old_dir = _newDir;
 	}
 }
 
