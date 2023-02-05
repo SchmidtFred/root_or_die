@@ -7,7 +7,7 @@ player_controller = 0;
 active_head = false;
 current_body = 0;
 dead = false;
-old_dir = direction;
+old_dir = 90;
 movement_timer_trigger = 30;
 movement_timer = movement_timer_trigger + 1;
 my_corners = [];
@@ -18,31 +18,16 @@ current_body = instance_create_layer(x, y, layer, RootBody);
 current_body.image_angle = image_angle;
 current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y);
 current_body.image_yscale = ROOT_WIDTH;
-array_push(my_bodies, current_body);
-
-function color_change(_newColor){
-	image_blend = _newColor;
-	var i = 0;
-	repeat(array_length(my_bodies)){
-		my_bodies[i].image_blend = _newColor;	
-		i++;
-	}
-	var i = 0;
-	repeat(array_length(my_corners)){
-		my_corners[i].image_blend = _newColor;
-		i++;
-	}
-}	
 
 function change_dir(_newDir) {
-	if (movement_timer > movement_timer_trigger && _newDir != old_dir) {
-		_newDir = round((_newDir/DIRECTION_ADD)) * DIRECTION_ADD;
-		direction = _newDir;
-		
+	_newDir = round((_newDir/DIRECTION_ADD)) * DIRECTION_ADD;
+	if (movement_timer > movement_timer_trigger && _newDir != (direction + 180) % 360) {
+		set_dir(_newDir);
+		image_angle = direction;
+	
 		//create corner
 		var newCorner = instance_create_layer(x,y,layer,RootCorner);
 		array_push(my_corners, newCorner);
-		newCorner.image_blend = image_blend;
 		newCorner.root1 = current_body;
 		newCorner.root1_dir = (old_dir + 180) % 360;
 		newCorner.root2_dir = (_newDir + 180) % 360;
@@ -50,20 +35,17 @@ function change_dir(_newDir) {
 		//create new root body
 		current_body = instance_create_layer(x, y, layer, RootBody);
 		array_push(my_bodies, current_body);
-		current_body.image_blend = image_blend;
 		current_body.image_angle = image_angle;
 		current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y);
 		current_body.image_yscale = ROOT_WIDTH;
 		newCorner.root2 = current_body;
 		//reset movement timer
 		movement_timer = 0;
-		old_dir = _newDir;
 	}
 }
 
 function toggle_active() {
 	active_head = !active_head;
-	color_change(active_head ? c_lime : c_white);
 }
 
 function kill_root() {

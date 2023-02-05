@@ -9,6 +9,10 @@ ipt = {};
 camera = view_camera[0];
 zoom_out = false;
 length_tracker = 0;
+root_spawn_timer_base = 30;
+root_spawn_timer = root_spawn_timer_base * room_speed;
+game_over = false;
+display_set_gui_size(window_get_width(), window_get_height());
 
 //function to create another root at base, placed here for initialization
 function create_root_at_base() {
@@ -82,6 +86,16 @@ function kill_current_root() {
 	current_root.toggle_active();
 	current_root.kill_root();
 	array_delete(alive_roots, current_root_index, 1);
-	current_root = alive_roots[current_root_index];
-	current_root.toggle_active();
+	if (array_length(alive_roots) > 0) {
+		if (current_root_index >= array_length(alive_roots)) {
+			current_root_index = 0;
+		}
+		current_root = alive_roots[current_root_index];
+		current_root.toggle_active();
+	} else {
+		zoom_out = true;
+		game_over = true;
+		camera_set_view_size(camera, BIG_CAM_W, BIG_CAM_H);
+	}
+
 }

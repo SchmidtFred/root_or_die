@@ -10,6 +10,7 @@
     {"id":{"name":"Macros","path":"scripts/Macros/Macros.yy",},"order":0,},
     {"id":{"name":"RootBody","path":"objects/RootBody/RootBody.yy",},"order":0,},
     {"id":{"name":"RootCorner","path":"objects/RootCorner/RootCorner.yy",},"order":0,},
+    {"id":{"name":"ft_Root","path":"fonts/ft_Root/ft_Root.yy",},"order":0,},
     {"id":{"name":"RoomGame","path":"rooms/RoomGame/RoomGame.yy",},"order":0,},
     {"id":{"name":"sp_RootBody","path":"sprites/sp_RootBody/sp_RootBody.yy",},"order":0,},
     {"id":{"name":"RenderGround","path":"objects/RenderGround/RenderGround.yy",},"order":1,},
