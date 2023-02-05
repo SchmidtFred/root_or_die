@@ -22,8 +22,13 @@ if (!game_over) {
 		}
 		//change current root
 		current_root_index += ipt.cycle;
-		current_root_index = abs(current_root_index % array_length(alive_roots));
+		//current_root_index = abs(current_root_index % array_length(alive_roots));
+		var alen = array_length(alive_roots);
+		if ( current_root_index < 0 ) current_root_index = alen-1;
+		if ( current_root_index > alen - 1) current_root_index = 0;
+		
 		current_root = alive_roots[current_root_index];
+		
 		//activate new current root
 		with(current_root) {
 			toggle_active();
