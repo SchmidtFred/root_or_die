@@ -35,6 +35,7 @@
     {"id":{"name":"PlayerController","path":"objects/PlayerController/PlayerController.yy",},"order":0,},
     {"id":{"name":"collision_parent","path":"objects/collision_parent/collision_parent.yy",},"order":0,},
     {"id":{"name":"Obstacle","path":"objects/Obstacle/Obstacle.yy",},"order":0,},
+    {"id":{"name":"Particles","path":"scripts/Particles/Particles.yy",},"order":0,},
     {"id":{"name":"sp_cutout","path":"sprites/sp_cutout/sp_cutout.yy",},"order":2,},
     {"id":{"name":"sp_SnakeHead","path":"sprites/sp_SnakeHead/sp_SnakeHead.yy",},"order":0,},
     {"id":{"name":"Top","path":"objects/Top/Top.yy",},"order":0,},

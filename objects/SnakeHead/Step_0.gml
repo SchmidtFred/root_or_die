@@ -15,11 +15,12 @@ if (!dead) {
 	current_body.image_angle = point_direction(current_body.x, current_body.y, x, y);
 	current_body.image_xscale = point_distance(current_body.x, current_body.y, x, y);
 	current_body.image_yscale = ROOT_WIDTH;
+	
+	var _ahead = 12;
+	RenderGround.do_cutout(x + (dcos(image_angle)*_ahead), y - (dsin(image_angle)*_ahead));
 }
 
 
 
 
 movement_timer++;
-var _ahead = 12;
-RenderGround.do_cutout(x + (dcos(image_angle)*_ahead), y - (dsin(image_angle)*_ahead));

@@ -19,6 +19,7 @@
     {"name":"PlayerController","order":2,"path":"objects/PlayerController/PlayerController.yy",},
     {"name":"collision_parent","order":4,"path":"objects/collision_parent/collision_parent.yy",},
     {"name":"Obstacle","order":6,"path":"objects/Obstacle/Obstacle.yy",},
+    {"name":"Particles","order":1,"path":"scripts/Particles/Particles.yy",},
     {"name":"Top","order":8,"path":"objects/Top/Top.yy",},
     {"name":"sp_Bottom","order":7,"path":"sprites/sp_Bottom/sp_Bottom.yy",},
     {"name":"RootBody","order":3,"path":"objects/RootBody/RootBody.yy",},
