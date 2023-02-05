@@ -9,14 +9,15 @@ ipt = {};
 camera = view_camera[0];
 zoom_out = false;
 length_tracker = 0;
-root_spawn_timer_base = 30;
+root_spawn_timer_base = 15;
 root_spawn_timer = root_spawn_timer_base * room_speed;
 game_over = false;
 display_set_gui_size(window_get_width(), window_get_height());
 
 //function to create another root at base, placed here for initialization
 function create_root_at_base() {
-	var new_root = instance_create_layer(x + (starting_distance_apart * roots_at_base_ct), y, layer, SnakeHead);
+	var left_right = choose(-1, 1);
+	var new_root = instance_create_layer(x + (starting_distance_apart * roots_at_base_ct * left_right), y, layer, SnakeHead);
 	array_push(alive_roots, new_root);
 	new_root.player_controller = self;
 	roots_at_base_ct++;

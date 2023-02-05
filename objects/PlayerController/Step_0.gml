@@ -49,7 +49,7 @@ if (!game_over) {
 	
 	if (length_tracker > root_spawn_timer) {
 		create_root();
-		root_spawn_timer = power(root_spawn_timer_base, array_length(alive_roots) - 1);
+		root_spawn_timer = power(root_spawn_timer_base, array_length(alive_roots) - 1) * room_speed;
 	}
 	
 } else {
