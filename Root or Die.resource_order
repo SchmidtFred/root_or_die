@@ -1,0 +1,28 @@
+{
+  "FolderOrderSettings": [
+    {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
+    {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
+    {"name":"Paths","order":4,"path":"folders/Paths.yy",},
+    {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
+    {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
+    {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
+    {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"Objects","order":9,"path":"folders/Objects.yy",},
+    {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
+    {"name":"Sequences","order":11,"path":"folders/Sequences.yy",},
+    {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
+    {"name":"Notes","order":13,"path":"folders/Notes.yy",},
+    {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"PlayerController","order":2,"path":"objects/PlayerController/PlayerController.yy",},
+    {"name":"collision_parent","order":4,"path":"objects/collision_parent/collision_parent.yy",},
+    {"name":"RootBody","order":3,"path":"objects/RootBody/RootBody.yy",},
+    {"name":"RootCorner","order":5,"path":"objects/RootCorner/RootCorner.yy",},
+    {"name":"RoomGame","order":1,"path":"rooms/RoomGame/RoomGame.yy",},
+    {"name":"sp_RootBody","order":1,"path":"sprites/sp_RootBody/sp_RootBody.yy",},
+    {"name":"SnakeHead","order":1,"path":"objects/SnakeHead/SnakeHead.yy",},
+    {"name":"sp_RootCorner","order":2,"path":"sprites/sp_RootCorner/sp_RootCorner.yy",},
+  ],
+}
