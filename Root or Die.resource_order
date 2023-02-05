@@ -23,6 +23,7 @@
     {"name":"sp_Bottom","order":7,"path":"sprites/sp_Bottom/sp_Bottom.yy",},
     {"name":"RootBody","order":3,"path":"objects/RootBody/RootBody.yy",},
     {"name":"Side","order":9,"path":"objects/Side/Side.yy",},
+    {"name":"sp_menu_art","order":9,"path":"sprites/sp_menu_art/sp_menu_art.yy",},
     {"name":"Bottom","order":7,"path":"objects/Bottom/Bottom.yy",},
     {"name":"RootCorner","order":5,"path":"objects/RootCorner/RootCorner.yy",},
     {"name":"RoomGame","order":1,"path":"rooms/RoomGame/RoomGame.yy",},
