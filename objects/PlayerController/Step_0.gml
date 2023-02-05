@@ -1,3 +1,4 @@
+if ( paused ) exit;
 ipt.x = keyboard_check(vk_right) - keyboard_check(vk_left);
 ipt.y = keyboard_check(vk_down) - keyboard_check(vk_up);
 ipt.cycle = keyboard_check_pressed(ord("D")) - keyboard_check_pressed(ord("A"));

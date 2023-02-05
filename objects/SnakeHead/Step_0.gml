@@ -1,3 +1,5 @@
+if ( PlayerController.paused ) exit;
+
 //root body
 if (!dead) {
 	//image_angle = direction;	
@@ -19,8 +21,7 @@ if (!dead) {
 	var _ahead = 12;
 	RenderGround.do_cutout(x + (dcos(image_angle)*_ahead), y - (dsin(image_angle)*_ahead));
 }
-
-
-
-
 movement_timer++;
+
+x += dcos(direction) * SPEED;
+y -= dsin(direction) * SPEED;

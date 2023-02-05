@@ -12,7 +12,10 @@ length_tracker = 0;
 root_spawn_timer_base = 15;
 root_spawn_timer = root_spawn_timer_base * room_speed;
 game_over = false;
-display_set_gui_size(window_get_width(), window_get_height());
+paused = false;
+function toggle_pause(){
+	paused = !paused;	
+}
 
 //function to create another root at base, placed here for initialization
 function create_root_at_base() {
@@ -22,19 +25,14 @@ function create_root_at_base() {
 	new_root.player_controller = self;
 	roots_at_base_ct++;
 }
-
 //Create starting roots
 var i = 0;
 repeat(starting_roots) {
 	create_root_at_base();
 	i++;
 }
-
 current_root = alive_roots[current_root_index];
-
 current_root.toggle_active();
-
-
 
 function create_root() {
 	//determine where root will go

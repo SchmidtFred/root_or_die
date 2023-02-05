@@ -1,5 +1,4 @@
-speed = SNAKE_SPEED;
-
+SPEED = SNAKE_SPEED;
 direction = DOWN_DIRECTION;
 image_angle = direction;
 
@@ -59,7 +58,7 @@ function toggle_active() {
 }
 
 function kill_root() {
-	speed = 0;
+	SPEED = 0;
 	dead = true;
 }
 
