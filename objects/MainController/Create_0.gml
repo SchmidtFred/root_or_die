@@ -28,6 +28,7 @@ text = "";
 prompt = "";
 tutorial_complete = false;
 tutorial = Coroutine(){
+	Audio.play_dialogue(Sound.intro);
 	
 	Yield(30); Then
 	

@@ -77,7 +77,7 @@ switch (me) {
 		break;
 }
 collision_callback = function(){
-	if (irandom(100) > 60) {
+	if (irandom(100) > 50) {
 		return;
 	}
 	Audio.play_dialogue(sound);

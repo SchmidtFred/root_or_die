@@ -39,6 +39,9 @@ repeat(starting_roots) {
 current_root = alive_roots[current_root_index];
 current_root.toggle_active();
 
+//set up idle speech
+alarm[0] = irandom_range(5, 30) * room_speed;
+
 function create_root() {
 	//determine where root will go
 	var chance = irandom(100);
@@ -80,7 +83,9 @@ function create_root() {
 		if (!found_corner) {
 			create_root_at_base();
 		}
-		Audio.play_dialogue(sound);
+		if (irandom(100) < 50) {
+			Audio.play_dialogue(sound);
+		}
 	}
 }
 
